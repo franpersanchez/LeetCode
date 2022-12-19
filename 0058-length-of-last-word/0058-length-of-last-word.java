@@ -1,6 +1,6 @@
 class Solution {
     public int lengthOfLastWord(String s1) {
-           // before I get to the last word.
+           // before we trim the String
         String s = s1.trim();
 
         if(s.isEmpty()) {
