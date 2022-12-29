@@ -4,10 +4,11 @@ class Solution {
         int n = nums.length;
         Arrays.sort(nums);
         
-        int xor=0,i=0;
-        for(i=0; i<n; i++){
+        int xor=0;
+        for(int i=0; i<n; i++){
            xor = xor ^ i ^ nums[i];
         }
-        return xor ^ i;
+       
+        return xor ^ n ;
     }
 }
