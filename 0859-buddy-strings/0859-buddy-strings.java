@@ -3,14 +3,13 @@ class Solution {
         if (s.length() != goal.length()) return false;
 
         //if strings are identical we need to check if there is a repeated char to swap
-        Map<Character, Integer> map = new HashMap<>();
+        //so we pass the string to a set. In case there are duplicates, set would be smaller than s
         if (s.equals(goal)) {
-            int valor = 0;
-            for (int i = 0; i < s.length(); i++) {
-                map.put(s.charAt(i), map.getOrDefault(s.charAt(i), valor) + 1);
-                if (map.get(s.charAt(i)) > 1) return true;
+            Set<Character> charSet = new HashSet<>();
+            for (char c : goal.toCharArray()) {
+                charSet.add(c);
             }
-            return false;
+            return charSet.size() < s.length();
         }
         //else, if s and goals are different, but same length...
         int firstIndex = -1;
